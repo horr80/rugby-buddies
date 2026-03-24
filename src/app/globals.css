@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 150 10% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 150 10% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 10% 15%;
+    --primary: 120 37% 27%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 37 76% 49%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 120 10% 96%;
+    --muted-foreground: 120 5% 45%;
+    --accent: 120 10% 94%;
+    --accent-foreground: 120 37% 20%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 120 10% 89%;
+    --input: 120 10% 89%;
+    --ring: 120 37% 27%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .rugby-gradient {
+    background: linear-gradient(135deg, #2D5F2D 0%, #3a7a3a 50%, #2D5F2D 100%);
+  }
+  .gold-gradient {
+    background: linear-gradient(135deg, #D4A843 0%, #e8c36a 50%, #D4A843 100%);
+  }
+  .grass-pattern {
+    background-image: 
+      linear-gradient(135deg, rgba(45, 95, 45, 0.03) 25%, transparent 25%),
+      linear-gradient(225deg, rgba(45, 95, 45, 0.03) 25%, transparent 25%),
+      linear-gradient(315deg, rgba(45, 95, 45, 0.03) 25%, transparent 25%),
+      linear-gradient(45deg, rgba(45, 95, 45, 0.03) 25%, transparent 25%);
+    background-size: 20px 20px;
+  }
+}

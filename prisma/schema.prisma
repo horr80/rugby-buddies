@@ -1,0 +1,245 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  PARENT
+  ADMIN
+}
+
+enum TermType {
+  AUTUMN
+  WINTER
+  SUMMER
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  UNPAID
+  PENDING
+  PAID
+  REFUNDED
+}
+
+enum MediaType {
+  VIDEO
+  PHOTO
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  password      String
+  firstName     String
+  lastName      String
+  mobile        String?
+  role          UserRole  @default(PARENT)
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  children      Child[]
+  bookings      Booking[]
+  messages      Message[]       @relation("ReceivedMessages")
+  sentMessages  Message[]       @relation("SentMessages")
+  sentReminders SentReminder[]
+  announcements Announcement[]
+}
+
+model Child {
+  id          String   @id @default(cuid())
+  firstName   String
+  lastName    String
+  dateOfBirth DateTime
+  userId      String
+  ageGroupId  String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ageGroup    AgeGroup? @relation(fields: [ageGroupId], references: [id])
+  bookings    Booking[]
+}
+
+model AgeGroup {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  minAge    Int
+  maxAge    Int
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  children  Child[]
+  blocks    Block[]
+}
+
+model Term {
+  id        String   @id @default(cuid())
+  name      String
+  type      TermType
+  startDate DateTime
+  endDate   DateTime
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  blocks    Block[]
+}
+
+model Block {
+  id              String   @id @default(cuid())
+  title           String
+  description     String?
+  termId          String
+  ageGroupId      String
+  locationName    String
+  locationAddress String?
+  maxSlots        Int
+  priceInPence    Int
+  paymentLink     String?
+  paymentProvider String?
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  term            Term     @relation(fields: [termId], references: [id])
+  ageGroup        AgeGroup @relation(fields: [ageGroupId], references: [id])
+  sessions        Session[]
+  bookings        Booking[]
+  reminders       Reminder[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  blockId   String
+  date      DateTime
+  startTime String
+  endTime   String
+  notes     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  block     Block    @relation(fields: [blockId], references: [id], onDelete: Cascade)
+}
+
+model Booking {
+  id               String        @id @default(cuid())
+  userId           String
+  childId          String
+  blockId          String
+  status           BookingStatus @default(PENDING)
+  paymentStatus    PaymentStatus @default(UNPAID)
+  paymentReference String?
+  notes            String?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  user             User          @relation(fields: [userId], references: [id])
+  child            Child         @relation(fields: [childId], references: [id])
+  block            Block         @relation(fields: [blockId], references: [id])
+
+  @@unique([childId, blockId])
+}
+
+model Announcement {
+  id          String   @id @default(cuid())
+  title       String
+  content     String
+  publishDate DateTime @default(now())
+  isActive    Boolean  @default(true)
+  createdById String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  createdBy   User     @relation(fields: [createdById], references: [id])
+}
+
+model Message {
+  id            String   @id @default(cuid())
+  subject       String
+  body          String
+  senderId      String
+  recipientId   String
+  isRead        Boolean  @default(false)
+  sentAt        DateTime @default(now())
+  createdAt     DateTime @default(now())
+
+  sender        User     @relation("SentMessages", fields: [senderId], references: [id])
+  recipient     User     @relation("ReceivedMessages", fields: [recipientId], references: [id])
+}
+
+model MediaItem {
+  id           String    @id @default(cuid())
+  title        String
+  type         MediaType
+  url          String
+  thumbnailUrl String?
+  description  String?
+  sortOrder    Int       @default(0)
+  isActive     Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Reminder {
+  id             String   @id @default(cuid())
+  blockId        String
+  sendBeforeDays Int      @default(2)
+  message        String
+  isActive       Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  block          Block    @relation(fields: [blockId], references: [id], onDelete: Cascade)
+  sentReminders  SentReminder[]
+}
+
+model SentReminder {
+  id         String   @id @default(cuid())
+  reminderId String
+  userId     String
+  sentAt     DateTime @default(now())
+
+  reminder   Reminder @relation(fields: [reminderId], references: [id], onDelete: Cascade)
+  user       User     @relation(fields: [userId], references: [id])
+
+  @@unique([reminderId, userId])
+}
+
+model SiteSettings {
+  id    String @id @default(cuid())
+  key   String @unique
+  value String
+}
+
+model CoachProfile {
+  id                String   @id @default(cuid())
+  name              String
+  title             String?
+  bio               String
+  photoUrl          String?
+  careerHighlights  String?
+  stats             String?
+  achievements      String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model ContactConfig {
+  id             String  @id @default(cuid())
+  adminEmail     String
+  phone          String?
+  address        String?
+  mapEmbedUrl    String?
+  additionalInfo String?
+}
