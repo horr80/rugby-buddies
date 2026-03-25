@@ -13,7 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+
 
 function excerptFromContent(content: string, max = 140) {
   const plain = content.replace(/\s+/g, " ").trim();
