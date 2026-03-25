@@ -103,7 +103,7 @@ export default function AdminCoachPage() {
     <div className="mx-auto max-w-2xl space-y-6">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-emerald-950">Coach profile</h1>
+          <h1 className="text-3xl font-bold text-emerald-950">My Life</h1>
           <p className="text-emerald-800/80">Public coach page content.</p>
         </div>
         <Button asChild variant="outline" className="border-emerald-800/30">

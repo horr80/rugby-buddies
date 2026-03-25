@@ -93,7 +93,7 @@ export default function AdminContactPage() {
   return (
     <div className="mx-auto max-w-2xl space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-emerald-950">Contact configuration</h1>
+        <h1 className="text-3xl font-bold text-emerald-950">Contact Us</h1>
         <p className="text-emerald-800/80">Details shown on the contact page and for enquiries.</p>
       </div>
 

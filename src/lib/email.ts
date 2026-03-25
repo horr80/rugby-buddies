@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-export { blastEmailTemplate, postcardEmailTemplate } from "./email-templates";
+export { blastEmailTemplate } from "./email-templates";
 
 function getTransporter() {
   return nodemailer.createTransport({

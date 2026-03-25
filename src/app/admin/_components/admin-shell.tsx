@@ -14,7 +14,6 @@ import {
   Megaphone,
   MessagesSquare,
   Send,
-  Mail,
   Images,
   BellRing,
   Phone,
@@ -38,11 +37,10 @@ const nav: NavItem[] = [
   { href: "/admin/announcements", label: "Announcements", icon: Megaphone },
   { href: "/admin/messages", label: "Messages", icon: MessagesSquare },
   { href: "/admin/email", label: "Email Blasts", icon: Send },
-  { href: "/admin/postcards", label: "Postcards", icon: Mail },
   { href: "/admin/media", label: "Media", icon: Images },
   { href: "/admin/reminders", label: "Reminders", icon: BellRing },
-  { href: "/admin/contact", label: "Contact Config", icon: Phone },
-  { href: "/admin/coach", label: "Coach Profile", icon: Trophy },
+  { href: "/admin/contact", label: "Contact Us", icon: Phone },
+  { href: "/admin/coach", label: "My Life", icon: Trophy },
   { href: "/admin/settings", label: "Settings", icon: Settings },
 ];
 

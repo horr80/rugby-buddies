@@ -10,6 +10,8 @@ import {
   CalendarClock,
   ArrowRight,
 } from "lucide-react";
+import { SlotsGrid } from "./_components/slots-grid";
+import { MediaViewsWidget } from "./_components/media-views-widget";
 
 type RecentBooking = {
   id: string;
@@ -166,6 +168,10 @@ export default async function AdminDashboardPage() {
           </CardContent>
         </Card>
       </div>
+
+      <SlotsGrid />
+
+      <MediaViewsWidget />
     </div>
   );
 }

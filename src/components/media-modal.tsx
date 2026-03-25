@@ -106,7 +106,16 @@ export function MediaGallery({ items }: MediaGalleryProps) {
   const [active, setActive] = useState<MediaItemDTO | null>(null);
   const [open, setOpen] = useState(false);
 
+  const trackView = (id: string) => {
+    fetch("/api/media/views", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mediaItemId: id }),
+    }).catch(() => {});
+  };
+
   const openItem = (item: MediaItemDTO) => {
+    trackView(item.id);
     if (item.type === "VIDEO" && !getVideoEmbedSrc(item.url)) {
       window.open(item.url, "_blank", "noopener,noreferrer");
       return;

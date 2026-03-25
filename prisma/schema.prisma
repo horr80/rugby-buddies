@@ -152,16 +152,26 @@ model Message {
 }
 
 model MediaItem {
-  id           String    @id @default(cuid())
+  id           String      @id @default(cuid())
   title        String
   type         String
   url          String
   thumbnailUrl String?
   description  String?
-  sortOrder    Int       @default(0)
-  isActive     Boolean   @default(true)
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
+  sortOrder    Int         @default(0)
+  isActive     Boolean     @default(true)
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  views        MediaView[]
+}
+
+model MediaView {
+  id          String    @id @default(cuid())
+  mediaItemId String
+  viewedAt    DateTime  @default(now())
+
+  mediaItem   MediaItem @relation(fields: [mediaItemId], references: [id], onDelete: Cascade)
 }
 
 model Reminder {
