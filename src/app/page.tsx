@@ -75,10 +75,10 @@ export default async function HomePage() {
       <section className="relative overflow-hidden rugby-gradient text-white">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(212,168,67,0.25),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,0,0,0.15),transparent_45%)]" />
-        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+        <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
           <div className="flex flex-col items-center text-center lg:flex-row lg:items-center lg:gap-12 lg:text-left">
             <div className="mb-8 flex shrink-0 lg:mb-0">
-              <div className="flex h-28 w-28 items-center justify-center rounded-2xl border-4 border-[#D4A843] bg-[#D4A843] text-4xl font-black tracking-tight text-[#2D5F2D] shadow-xl sm:h-36 sm:w-36 sm:text-5xl font-heading">
+              <div className="flex h-20 w-20 items-center justify-center rounded-2xl border-4 border-[#D4A843] bg-[#D4A843] text-3xl font-black tracking-tight text-[#2D5F2D] shadow-xl sm:h-28 sm:w-28 sm:text-4xl font-heading">
                 RB
               </div>
             </div>
