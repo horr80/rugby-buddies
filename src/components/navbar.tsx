@@ -36,10 +36,10 @@ export function Navbar() {
               Media
             </Link>
             <Link href="/profile/coach" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition-colors">
-              Charlie
+              My Life
             </Link>
             <Link href="/contact" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition-colors">
-              Contact
+              Contact Me
             </Link>
 
             {session ? (
@@ -98,10 +98,10 @@ export function Navbar() {
               Media
             </Link>
             <Link href="/profile/coach" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700" onClick={() => setMobileOpen(false)}>
-              Charlie
+              My Life
             </Link>
             <Link href="/contact" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700" onClick={() => setMobileOpen(false)}>
-              Contact
+              Contact Me
             </Link>
             {session ? (
               <>
