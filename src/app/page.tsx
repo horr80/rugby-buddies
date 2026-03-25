@@ -74,41 +74,28 @@ export default async function HomePage() {
       {/* Hero */}
       <section className="relative overflow-hidden rugby-gradient text-white">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(212,168,67,0.25),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,0,0,0.15),transparent_45%)]" />
-        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
-          <div className="flex flex-col items-center text-center lg:flex-row lg:items-center lg:gap-12 lg:text-left">
-            <div className="mb-8 flex shrink-0 lg:mb-0">
-              <div className="flex h-28 w-28 items-center justify-center rounded-2xl border-4 border-[#D4A843] bg-[#D4A843] text-4xl font-black tracking-tight text-[#2D5F2D] shadow-xl sm:h-36 sm:w-36 sm:text-5xl font-heading">
-                RB
-              </div>
-            </div>
-            <div className="flex-1 space-y-6">
-              <Badge className="border-[#D4A843]/40 bg-black/20 text-[#D4A843] hover:bg-black/30">
-                Youth rugby training
-              </Badge>
-              <h1 className="font-heading text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                Rugby Buddy
-              </h1>
-              <p className="mx-auto max-w-2xl text-lg text-green-100 sm:text-xl lg:mx-0">
-                Where Young Champions Are Made
-              </p>
-              <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
-                <Button
-                  asChild
-                  size="lg"
-                  className="w-full min-w-[200px] bg-[#D4A843] text-[#2D5F2D] hover:bg-[#c49838] sm:w-auto"
-                >
-                  <Link href="/dashboard/bookings">Book a Session</Link>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
-                  className="w-full min-w-[200px] border-white/40 bg-white/10 text-white hover:bg-white/20 hover:text-white sm:w-auto"
-                >
-                  <Link href="/profile/coach">Learn More</Link>
-                </Button>
-              </div>
+        <div className="relative mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+          <div className="flex items-center gap-6">
+            <h1 className="font-heading text-2xl font-extrabold tracking-tight sm:text-3xl">
+              Rugby Buddy
+            </h1>
+            <span className="hidden text-sm text-green-200 sm:inline">Where Young Champions Are Made</span>
+            <div className="ml-auto flex items-center gap-3">
+              <Button
+                asChild
+                size="sm"
+                className="bg-[#D4A843] text-[#2D5F2D] hover:bg-[#c49838]"
+              >
+                <Link href="/dashboard/bookings">Book a Session</Link>
+              </Button>
+              <Button
+                asChild
+                size="sm"
+                variant="outline"
+                className="border-white/40 bg-white/10 text-white hover:bg-white/20 hover:text-white"
+              >
+                <Link href="/profile/coach">Learn More</Link>
+              </Button>
             </div>
           </div>
         </div>
