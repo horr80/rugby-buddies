@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import type { Metadata } from "next";
 import { UserRound } from "lucide-react";
 import { prisma } from "@/lib/db";

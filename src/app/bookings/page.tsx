@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Link from "next/link";
 import { CalendarDays, MapPin, Clock, Users, Tag, CheckCircle, AlertCircle, XCircle, Ticket } from "lucide-react";
 import { getServerSession } from "next-auth";

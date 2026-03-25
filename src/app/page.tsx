@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Link from "next/link";
 import { Play, Sparkles, Users, Trophy } from "lucide-react";
 import { prisma } from "@/lib/db";
