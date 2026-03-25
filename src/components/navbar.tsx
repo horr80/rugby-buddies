@@ -21,7 +21,7 @@ export function Navbar() {
               <div className="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center font-bold text-lg text-white">
                 RB
               </div>
-              <span className="text-xl font-bold hidden sm:block">Rugby Buddies</span>
+              <span className="text-xl font-bold hidden sm:block">Rugby Buddy</span>
             </Link>
           </div>
 
@@ -29,11 +29,14 @@ export function Navbar() {
             <Link href="/" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition-colors">
               Home
             </Link>
+            <Link href="/bookings" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition-colors">
+              Bookings
+            </Link>
             <Link href="/media" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition-colors">
               Media
             </Link>
             <Link href="/profile/coach" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition-colors">
-              Coach
+              Charlie
             </Link>
             <Link href="/contact" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition-colors">
               Contact
@@ -88,11 +91,14 @@ export function Navbar() {
             <Link href="/" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700" onClick={() => setMobileOpen(false)}>
               Home
             </Link>
+            <Link href="/bookings" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700" onClick={() => setMobileOpen(false)}>
+              Bookings
+            </Link>
             <Link href="/media" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700" onClick={() => setMobileOpen(false)}>
               Media
             </Link>
             <Link href="/profile/coach" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700" onClick={() => setMobileOpen(false)}>
-              Coach
+              Charlie
             </Link>
             <Link href="/contact" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-700" onClick={() => setMobileOpen(false)}>
               Contact

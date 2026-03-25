@@ -119,7 +119,7 @@ export default function RegisterPage() {
           >
             RB
           </div>
-          <h1 className="mt-3 text-xl font-heading font-bold text-[#2D5F2D]">Join Rugby Buddies</h1>
+          <h1 className="mt-3 text-xl font-heading font-bold text-[#2D5F2D]">Join Rugby Buddy</h1>
           <p className="text-sm text-muted-foreground text-center max-w-md">
             Register as a parent and add your child to get started with sessions and updates.
           </p>

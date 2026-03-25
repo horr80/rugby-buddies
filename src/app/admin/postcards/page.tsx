@@ -24,7 +24,7 @@ import { postcardEmailTemplate } from "@/lib/email-templates";
 type RecipientFilter = "all" | "ageGroup" | "block";
 
 export default function AdminPostcardsPage() {
-  const [heading, setHeading] = useState("A Message from Rugby Buddies");
+  const [heading, setHeading] = useState("A Message from Rugby Buddy");
   const [message, setMessage] = useState("");
   const [filter, setFilter] = useState<RecipientFilter>("all");
   const [filterId, setFilterId] = useState("");

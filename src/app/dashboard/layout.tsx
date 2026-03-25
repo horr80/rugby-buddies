@@ -76,7 +76,7 @@ export default async function DashboardLayout({ children }: { children: ReactNod
             </div>
             <div>
               <p className="text-xs uppercase tracking-wide text-white/70">Member area</p>
-              <p className="text-sm font-semibold leading-tight">Rugby Buddies</p>
+              <p className="text-sm font-semibold leading-tight">Rugby Buddy</p>
             </div>
           </div>
         </div>

@@ -144,7 +144,7 @@ export default function AdminMessagesPage() {
       <Card className="border-emerald-900/10">
         <CardHeader>
           <CardTitle className="text-emerald-950">Compose</CardTitle>
-          <CardDescription>Choose who receives a copy in their Rugby Buddies messages.</CardDescription>
+          <CardDescription>Choose who receives a copy in their Rugby Buddy messages.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">

@@ -5,8 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
-  title: "Our Coach | Rugby Buddies",
-  description: "Meet the Rugby Buddies coaching team.",
+  title: "Our Coach | Rugby Buddy",
+  description: "Meet the Rugby Buddy coaching team.",
 };
 
 function parseJsonArray(raw: string | null | undefined): unknown[] {
@@ -62,7 +62,7 @@ export default async function CoachProfilePage() {
               </div>
               <h1 className="font-heading text-2xl font-bold text-green-900 sm:text-3xl">Coming soon</h1>
               <p className="mx-auto mt-3 max-w-md text-muted-foreground">
-                Our coach profile is on the way. Check back shortly to meet the team behind Rugby Buddies.
+                Our coach profile is on the way. Check back shortly to meet the team behind Rugby Buddy.
               </p>
             </CardContent>
           </Card>

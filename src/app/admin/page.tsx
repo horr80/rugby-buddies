@@ -73,7 +73,7 @@ export default async function AdminDashboardPage() {
     <div className="mx-auto max-w-6xl space-y-8">
       <div>
         <h1 className="text-3xl font-bold tracking-tight text-emerald-950">Dashboard</h1>
-        <p className="mt-1 text-emerald-800/80">Overview of Rugby Buddies operations.</p>
+        <p className="mt-1 text-emerald-800/80">Overview of Rugby Buddy operations.</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">

@@ -149,7 +149,7 @@ export default function MessagesPage() {
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-[#2D5F2D]">Messages</h1>
-          <p className="mt-1 text-muted-foreground">Notes and updates from the Rugby Buddies team.</p>
+          <p className="mt-1 text-muted-foreground">Notes and updates from the Rugby Buddy team.</p>
         </div>
         <Card className="flex flex-col items-center justify-center border-dashed border-[#2D5F2D]/25 py-20">
           <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#2D5F2D]/10">
@@ -176,7 +176,7 @@ export default function MessagesPage() {
               </Badge>
             ) : null}
           </div>
-          <p className="mt-1 text-muted-foreground">Your inbox from Rugby Buddies.</p>
+          <p className="mt-1 text-muted-foreground">Your inbox from Rugby Buddy.</p>
         </div>
       </div>
 

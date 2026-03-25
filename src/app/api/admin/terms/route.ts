@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { TermType } from "@prisma/client";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 
@@ -39,7 +38,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, type, startDate, endDate, isActive } = body as {
       name: string;
-      type: TermType;
+      type: string;
       startDate: string;
       endDate: string;
       isActive?: boolean;
@@ -49,7 +48,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "name, type, startDate, and endDate are required" }, { status: 400 });
     }
 
-    if (!Object.values(TermType).includes(type)) {
+    if (!["AUTUMN", "WINTER", "SUMMER"].includes(type)) {
       return NextResponse.json({ error: "Invalid term type" }, { status: 400 });
     }
 

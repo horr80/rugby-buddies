@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { TermType } from "@prisma/client";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 
@@ -30,7 +29,7 @@ export async function PATCH(request: Request, { params }: RouteParams) {
     const body = await request.json();
     const data: {
       name?: string;
-      type?: TermType;
+      type?: string;
       startDate?: Date;
       endDate?: Date;
       isActive?: boolean;
@@ -38,7 +37,7 @@ export async function PATCH(request: Request, { params }: RouteParams) {
 
     if (body.name !== undefined) data.name = String(body.name);
     if (body.type !== undefined) {
-      if (!Object.values(TermType).includes(body.type)) {
+      if (!["AUTUMN", "WINTER", "SUMMER"].includes(body.type)) {
         return NextResponse.json({ error: "Invalid term type" }, { status: 400 });
       }
       data.type = body.type;

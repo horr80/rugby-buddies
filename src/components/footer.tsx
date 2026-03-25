@@ -10,7 +10,7 @@ export function Footer() {
               <div className="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center font-bold text-lg">
                 RB
               </div>
-              <span className="text-xl font-bold">Rugby Buddies</span>
+              <span className="text-xl font-bold">Rugby Buddy</span>
             </div>
             <p className="text-green-300 text-sm">
               Kids rugby training for all ages and abilities. Building confidence, teamwork, and a love for the game.
@@ -45,7 +45,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-green-800 mt-8 pt-8 text-center text-sm text-green-400">
-          <p>&copy; {new Date().getFullYear()} Rugby Buddies. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Rugby Buddy. All rights reserved.</p>
         </div>
       </div>
     </footer>

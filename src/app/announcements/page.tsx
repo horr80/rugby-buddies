@@ -6,8 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "Announcements | Rugby Buddies",
-  description: "News and updates from Rugby Buddies.",
+  title: "Announcements | Rugby Buddy",
+  description: "News and updates from Rugby Buddy.",
 };
 
 const PAGE_SIZE = 10;
@@ -50,7 +50,7 @@ export default async function AnnouncementsPage({ searchParams }: Props) {
       <div className="border-b border-green-100 bg-gradient-to-r from-[#2D5F2D] to-[#3d7a3d] text-white">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
           <h1 className="font-heading text-3xl font-bold sm:text-4xl">Announcements</h1>
-          <p className="mt-2 text-green-100">Stay up to date with Rugby Buddies news.</p>
+          <p className="mt-2 text-green-100">Stay up to date with Rugby Buddy news.</p>
         </div>
       </div>
 

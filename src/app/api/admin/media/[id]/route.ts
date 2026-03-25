@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { MediaType } from "@prisma/client";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 
@@ -30,7 +29,7 @@ export async function PATCH(request: Request, { params }: RouteParams) {
     const body = await request.json();
     const data: {
       title?: string;
-      type?: MediaType;
+      type?: string;
       url?: string;
       thumbnailUrl?: string | null;
       description?: string | null;
@@ -40,7 +39,7 @@ export async function PATCH(request: Request, { params }: RouteParams) {
 
     if (body.title !== undefined) data.title = String(body.title);
     if (body.type !== undefined) {
-      if (!Object.values(MediaType).includes(body.type)) {
+      if (!["VIDEO", "PHOTO"].includes(body.type)) {
         return NextResponse.json({ error: "Invalid media type" }, { status: 400 });
       }
       data.type = body.type;

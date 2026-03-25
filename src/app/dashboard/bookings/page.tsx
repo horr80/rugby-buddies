@@ -11,7 +11,6 @@ import {
   MapPin,
   AlertCircle,
 } from "lucide-react";
-import type { TermType } from "@prisma/client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -56,7 +55,7 @@ type BlockRow = {
   maxSlots: number;
   priceInPence: number;
   paymentLink: string | null;
-  term: { id: string; name: string; type: TermType; endDate: string; startDate: string };
+  term: { id: string; name: string; type: string; endDate: string; startDate: string };
   ageGroup: { id: string; name: string };
   sessions: SessionRow[];
   _count: { confirmedBookings: number };
@@ -70,7 +69,7 @@ type ApiPayload = {
   existingBookings: { blockId: string; childId: string }[];
 };
 
-function termBadgeClass(type: TermType) {
+function termBadgeClass(type: string) {
   switch (type) {
     case "AUTUMN":
       return "border-orange-400/60 bg-orange-500/15 text-orange-900 dark:text-orange-100";

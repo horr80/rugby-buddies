@@ -3,8 +3,8 @@ import { prisma } from "@/lib/db";
 import { MediaGallery, type MediaItemDTO } from "@/components/media-modal";
 
 export const metadata: Metadata = {
-  title: "Media | Rugby Buddies",
-  description: "Photos and videos from Rugby Buddies training and events.",
+  title: "Media | Rugby Buddy",
+  description: "Photos and videos from Rugby Buddy training and events.",
 };
 
 type MediaRow = {
@@ -37,7 +37,7 @@ export default async function MediaPage() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h1 className="font-heading text-3xl font-bold sm:text-4xl">Media gallery</h1>
           <p className="mt-2 max-w-2xl text-green-100">
-            Catch up on highlights, training clips, and photos from Rugby Buddies.
+            Catch up on highlights, training clips, and photos from Rugby Buddy.
           </p>
         </div>
       </div>

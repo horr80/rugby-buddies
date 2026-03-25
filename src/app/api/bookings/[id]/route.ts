@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { BookingStatus, PaymentStatus } from "@prisma/client";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 
@@ -48,8 +47,8 @@ export async function PATCH(request: Request, { params }: RouteParams) {
 
     const body = await request.json();
     const { status, paymentStatus, paymentReference } = body as {
-      status?: BookingStatus;
-      paymentStatus?: PaymentStatus;
+      status?: string;
+      paymentStatus?: string;
       paymentReference?: string | null;
     };
 
@@ -58,8 +57,8 @@ export async function PATCH(request: Request, { params }: RouteParams) {
     }
 
     const data: {
-      status?: BookingStatus;
-      paymentStatus?: PaymentStatus;
+      status?: string;
+      paymentStatus?: string;
       paymentReference?: string | null;
     } = {};
 
@@ -111,7 +110,7 @@ export async function DELETE(_request: Request, { params }: RouteParams) {
 
     const updated = await prisma.booking.update({
       where: { id: params.id },
-      data: { status: BookingStatus.CANCELLED },
+      data: { status: "CANCELLED" },
       include: bookingInclude,
     });
 

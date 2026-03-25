@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-import { UserRole } from "@prisma/client";
 import { prisma } from "@/lib/db";
 
 export async function POST(request: Request) {
@@ -36,7 +35,7 @@ export async function POST(request: Request) {
         firstName: String(firstName),
         lastName: String(lastName),
         mobile: mobile != null ? String(mobile) : null,
-        role: UserRole.PARENT,
+        role: "PARENT",
         children: {
           create: {
             firstName: String(childFirstName),

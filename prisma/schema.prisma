@@ -3,36 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-}
-
-enum UserRole {
-  PARENT
-  ADMIN
-}
-
-enum TermType {
-  AUTUMN
-  WINTER
-  SUMMER
-}
-
-enum BookingStatus {
-  PENDING
-  CONFIRMED
-  CANCELLED
-}
-
-enum PaymentStatus {
-  UNPAID
-  PENDING
-  PAID
-  REFUNDED
-}
-
-enum MediaType {
-  VIDEO
-  PHOTO
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model User {
@@ -42,7 +15,7 @@ model User {
   firstName     String
   lastName      String
   mobile        String?
-  role          UserRole  @default(PARENT)
+  role          String    @default("PARENT")
   isActive      Boolean   @default(true)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
@@ -86,7 +59,7 @@ model AgeGroup {
 model Term {
   id        String   @id @default(cuid())
   name      String
-  type      TermType
+  type      String
   startDate DateTime
   endDate   DateTime
   isActive  Boolean  @default(true)
@@ -133,20 +106,20 @@ model Session {
 }
 
 model Booking {
-  id               String        @id @default(cuid())
+  id               String   @id @default(cuid())
   userId           String
   childId          String
   blockId          String
-  status           BookingStatus @default(PENDING)
-  paymentStatus    PaymentStatus @default(UNPAID)
+  status           String   @default("PENDING")
+  paymentStatus    String   @default("UNPAID")
   paymentReference String?
   notes            String?
-  createdAt        DateTime      @default(now())
-  updatedAt        DateTime      @updatedAt
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 
-  user             User          @relation(fields: [userId], references: [id])
-  child            Child         @relation(fields: [childId], references: [id])
-  block            Block         @relation(fields: [blockId], references: [id])
+  user             User     @relation(fields: [userId], references: [id])
+  child            Child    @relation(fields: [childId], references: [id])
+  block            Block    @relation(fields: [blockId], references: [id])
 
   @@unique([childId, blockId])
 }
@@ -181,7 +154,7 @@ model Message {
 model MediaItem {
   id           String    @id @default(cuid())
   title        String
-  type         MediaType
+  type         String
   url          String
   thumbnailUrl String?
   description  String?

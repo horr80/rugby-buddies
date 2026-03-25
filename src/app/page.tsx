@@ -85,7 +85,7 @@ export default async function HomePage() {
                 Youth rugby training
               </Badge>
               <h1 className="font-heading text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                Rugby Buddies
+                Rugby Buddy
               </h1>
               <p className="mx-auto max-w-2xl text-lg text-green-100 sm:text-xl lg:mx-0">
                 Where Young Champions Are Made
@@ -118,7 +118,7 @@ export default async function HomePage() {
           <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="font-heading text-2xl font-bold text-green-900 sm:text-3xl">Latest announcements</h2>
-              <p className="mt-1 text-muted-foreground">News and updates from Rugby Buddies.</p>
+              <p className="mt-1 text-muted-foreground">News and updates from Rugby Buddy.</p>
             </div>
             <Link
               href="/announcements"
@@ -247,10 +247,10 @@ export default async function HomePage() {
           )}
         </section>
 
-        {/* Why Rugby Buddies */}
+        {/* Why Rugby Buddy */}
         <section className="rounded-2xl border border-green-100 bg-white/90 p-8 shadow-sm sm:p-10">
           <h2 className="mb-8 text-center font-heading text-2xl font-bold text-green-900 sm:text-3xl">
-            Why Rugby Buddies?
+            Why Rugby Buddy?
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
             <Card className="border-green-100 bg-green-50/50">

@@ -26,7 +26,7 @@ export async function sendEmail({
   const transporter = getTransporter();
   const recipients = Array.isArray(to) ? to.join(", ") : to;
   await transporter.sendMail({
-    from: process.env.SMTP_FROM || "Rugby Buddies <noreply@rugbybuddies.co.uk>",
+    from: process.env.SMTP_FROM || "Rugby Buddy <noreply@rugbybuddies.co.uk>",
     to: recipients,
     subject,
     html,
@@ -44,7 +44,7 @@ export function reminderEmailTemplate(
   return `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f9f9f9; padding: 20px;">
       <div style="background: #2D5F2D; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0;">
-        <h1 style="margin: 0; font-size: 24px;">🏉 Rugby Buddies</h1>
+        <h1 style="margin: 0; font-size: 24px;">🏉 Rugby Buddy</h1>
         <p style="margin: 5px 0 0;">Session Reminder</p>
       </div>
       <div style="background: white; padding: 20px; border-radius: 0 0 8px 8px;">
@@ -58,7 +58,7 @@ export function reminderEmailTemplate(
           <p style="margin: 5px 0;"><strong>Location:</strong> ${location}</p>
         </div>
         <p>See you on the pitch!</p>
-        <p style="color: #666; font-size: 12px; margin-top: 20px;">Rugby Buddies - www.rugbybuddies.co.uk</p>
+        <p style="color: #666; font-size: 12px; margin-top: 20px;">Rugby Buddy - www.rugbybuddies.co.uk</p>
       </div>
     </div>
   `;

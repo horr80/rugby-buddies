@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { BookingStatus } from "@prisma/client";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 
@@ -42,13 +41,13 @@ export async function GET() {
       prisma.booking.findMany({
         where: {
           userId,
-          status: { not: BookingStatus.CANCELLED },
+          status: { not: "CANCELLED" },
         },
         select: { blockId: true, childId: true },
       }),
       prisma.booking.groupBy({
         by: ["blockId"],
-        where: { status: BookingStatus.CONFIRMED },
+        where: { status: "CONFIRMED" },
         _count: { _all: true },
       }),
     ]);

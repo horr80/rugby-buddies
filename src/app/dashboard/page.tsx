@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
-import { BookingStatus } from "@prisma/client";
 import { Calendar, MessageSquare, ClipboardList, ArrowRight } from "lucide-react";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/db";
@@ -41,7 +40,7 @@ export default async function DashboardHomePage() {
     prisma.booking.count({
       where: {
         userId,
-        status: { in: [BookingStatus.PENDING, BookingStatus.CONFIRMED] },
+        status: { in: ["PENDING", "CONFIRMED"] },
       },
     }),
   ]);
@@ -55,7 +54,7 @@ export default async function DashboardHomePage() {
           Welcome back, {firstName}!
         </h1>
         <p className="mt-1 text-muted-foreground">
-          Here’s a snapshot of your Rugby Buddies activity.
+          Here’s a snapshot of your Rugby Buddy activity.
         </p>
       </div>
 

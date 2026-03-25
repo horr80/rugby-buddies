@@ -34,9 +34,9 @@ export async function GET(request: Request) {
       const q = search.trim();
       clauses.push({
         OR: [
-          { email: { contains: q, mode: "insensitive" } },
-          { firstName: { contains: q, mode: "insensitive" } },
-          { lastName: { contains: q, mode: "insensitive" } },
+          { email: { contains: q } },
+          { firstName: { contains: q } },
+          { lastName: { contains: q } },
         ],
       });
     }

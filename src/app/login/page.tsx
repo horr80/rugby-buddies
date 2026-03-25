@@ -76,7 +76,7 @@ export default function LoginPage() {
           >
             RB
           </div>
-          <p className="mt-3 text-sm font-medium text-white/90 tracking-wide">Rugby Buddies</p>
+          <p className="mt-3 text-sm font-medium text-white/90 tracking-wide">Rugby Buddy</p>
         </div>
 
         <Card className="border-[#2D5F2D]/20 shadow-xl">
@@ -128,7 +128,7 @@ export default function LoginPage() {
                 {submitting ? "Signing in…" : "Sign in"}
               </Button>
               <p className="text-center text-sm text-muted-foreground">
-                New to Rugby Buddies?{" "}
+                New to Rugby Buddy?{" "}
                 <Link href="/register" className="font-medium text-[#2D5F2D] hover:underline">
                   Create an account
                 </Link>

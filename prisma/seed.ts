@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log("🏉 Seeding Rugby Buddies database...\n");
+  console.log("🏉 Seeding Rugby Buddy database...\n");
 
   // Admin user
   const adminPassword = await bcrypt.hash("RugbyAdmin2026!", 12);
@@ -91,7 +91,7 @@ async function main() {
       locationAddress: "123 River Road, Richmond, TW9 1AA",
       maxSlots: 20,
       priceInPence: 7500,
-      paymentLink: "https://paypal.me/rugbybuddies/75",
+      paymentLink: "https://paypal.me/rugbybuddy/75",
       paymentProvider: "PayPal",
       isActive: true,
       sessions: {
@@ -118,7 +118,7 @@ async function main() {
       locationAddress: "45 Church Lane, Twickenham, TW1 3NJ",
       maxSlots: 24,
       priceInPence: 6000,
-      paymentLink: "https://paypal.me/rugbybuddies/60",
+      paymentLink: "https://paypal.me/rugbybuddy/60",
       paymentProvider: "PayPal",
       isActive: true,
       sessions: {
@@ -145,7 +145,7 @@ async function main() {
       locationAddress: "123 River Road, Richmond, TW9 1AA",
       maxSlots: 16,
       priceInPence: 8500,
-      paymentLink: "https://paypal.me/rugbybuddies/85",
+      paymentLink: "https://paypal.me/rugbybuddy/85",
       paymentProvider: "PayPal",
       isActive: true,
       sessions: {
@@ -166,9 +166,9 @@ async function main() {
   await prisma.announcement.createMany({
     data: [
       {
-        title: "Welcome to Rugby Buddies!",
+        title: "Welcome to Rugby Buddy!",
         content:
-          "We're thrilled to launch Rugby Buddies, your one-stop destination for kids rugby training. Our sessions are designed to build confidence, teamwork, and a genuine love for the game. Whether your child is a complete beginner or an experienced player, we have something for everyone. Browse our upcoming blocks and book your spot today!",
+          "We're thrilled to launch Rugby Buddy, your one-stop destination for kids rugby training. Our sessions are designed to build confidence, teamwork, and a genuine love for the game. Whether your child is a complete beginner or an experienced player, we have something for everyone. Browse our upcoming blocks and book your spot today!",
         publishDate: new Date(),
         isActive: true,
         createdById: admin.id,
@@ -240,7 +240,7 @@ async function main() {
   await prisma.coachProfile.create({
     data: {
       name: "Charlie Hodgson",
-      title: "Head Coach - Rugby Buddies",
+      title: "Head Coach - Rugby Buddy",
       bio: `Charlie Hodgson is a former professional rugby union player who represented England and played at the highest level of the sport for over a decade. Born on 15 November 1980 in Halifax, West Yorkshire, Charlie developed his passion for rugby from a young age and went on to become one of England's most prolific fly-halves.
 
 Charlie played for Sale Sharks in the Premiership from 1999 to 2011, making over 200 appearances and becoming the club's all-time leading points scorer. He was instrumental in Sale's Premiership title triumph in the 2005-06 season, one of the greatest achievements in the club's history.
@@ -249,7 +249,7 @@ He earned 38 caps for England between 2001 and 2012, scoring over 200 internatio
 
 After his time at Sale, Charlie moved to Saracens where he continued to perform at the highest level, helping the club to Premiership and European success before retiring from playing in 2016.
 
-Now Charlie brings his wealth of experience and passion for the game to Rugby Buddies, where he is dedicated to developing the next generation of rugby talent. His coaching philosophy centres on building fundamental skills, fostering a love for the sport, and ensuring every young player has fun while learning.`,
+Now Charlie brings his wealth of experience and passion for the game to Rugby Buddy, where he is dedicated to developing the next generation of rugby talent. His coaching philosophy centres on building fundamental skills, fostering a love for the sport, and ensuring every young player has fun while learning.`,
       photoUrl: null,
       careerHighlights: JSON.stringify([
         { year: "1999-2011", text: "Sale Sharks - Over 200 appearances, all-time leading points scorer" },
@@ -257,7 +257,7 @@ Now Charlie brings his wealth of experience and passion for the game to Rugby Bu
         { year: "2001-2012", text: "38 caps for England, 200+ international points" },
         { year: "2011-2016", text: "Saracens - Premiership and European honours" },
         { year: "2016", text: "Retired from professional rugby" },
-        { year: "2026-present", text: "Head Coach at Rugby Buddies" },
+        { year: "2026-present", text: "Head Coach at Rugby Buddy" },
       ]),
       stats: JSON.stringify([
         { label: "England Caps", value: "38" },
@@ -297,7 +297,7 @@ Now Charlie brings his wealth of experience and passion for the game to Rugby Bu
     prisma.siteSettings.upsert({
       where: { key: "site_name" },
       update: {},
-      create: { key: "site_name", value: "Rugby Buddies" },
+      create: { key: "site_name", value: "Rugby Buddy" },
     }),
     prisma.siteSettings.upsert({
       where: { key: "site_tagline" },
@@ -318,13 +318,13 @@ Now Charlie brings his wealth of experience and passion for the game to Rugby Bu
       {
         blockId: block1.id,
         sendBeforeDays: 2,
-        message: "Just a friendly reminder that your child has a Rugby Buddies session coming up!",
+        message: "Just a friendly reminder that your child has a Rugby Buddy session coming up!",
         isActive: true,
       },
       {
         blockId: block2.id,
         sendBeforeDays: 2,
-        message: "Don't forget — Rugby Buddies tag rugby is this weekend! See you on the pitch!",
+        message: "Don't forget — Rugby Buddy tag rugby is this weekend! See you on the pitch!",
         isActive: true,
       },
       {

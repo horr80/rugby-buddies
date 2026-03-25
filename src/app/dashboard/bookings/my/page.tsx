@@ -12,7 +12,6 @@ import {
   AlertCircle,
   XCircle,
 } from "lucide-react";
-import type { BookingStatus, PaymentStatus } from "@prisma/client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -42,8 +41,8 @@ type SessionRow = {
 
 type BookingRow = {
   id: string;
-  status: BookingStatus;
-  paymentStatus: PaymentStatus;
+  status: string;
+  paymentStatus: string;
   child: { id: string; firstName: string; lastName: string };
   block: {
     id: string;
@@ -57,7 +56,7 @@ type BookingRow = {
   };
 };
 
-function bookingStatusVariant(status: BookingStatus): "warning" | "success" | "destructive" {
+function bookingStatusVariant(status: string): "warning" | "success" | "destructive" {
   switch (status) {
     case "PENDING":
       return "warning";
@@ -70,7 +69,7 @@ function bookingStatusVariant(status: BookingStatus): "warning" | "success" | "d
   }
 }
 
-function paymentBadgeClass(p: PaymentStatus) {
+function paymentBadgeClass(p: string) {
   switch (p) {
     case "PAID":
       return "border-emerald-600/40 bg-emerald-50 text-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-100";

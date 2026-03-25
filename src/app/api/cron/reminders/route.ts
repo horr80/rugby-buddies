@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { BookingStatus } from "@prisma/client";
 import { prisma } from "@/lib/db";
 import { reminderEmailTemplate, sendEmail } from "@/lib/email";
 
@@ -55,7 +54,7 @@ export async function GET(request: Request) {
         const bookings = await prisma.booking.findMany({
           where: {
             blockId: block.id,
-            status: BookingStatus.CONFIRMED,
+            status: "CONFIRMED",
             user: { isActive: true },
           },
           include: {

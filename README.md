@@ -1,4 +1,4 @@
-# Rugby Buddies
+# Rugby Buddy
 
 Kids rugby training booking and management platform. Built with Next.js 14, PostgreSQL, Prisma, and NextAuth.
 
@@ -41,8 +41,8 @@ Kids rugby training booking and management platform. Built with Next.js 14, Post
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/rugby-buddies.git
-cd rugby-buddies
+git clone https://github.com/YOUR_USERNAME/rugby-buddy.git
+cd rugby-buddy
 
 # Install dependencies
 npm install
@@ -57,7 +57,7 @@ cp .env.example .env
 Create a `.env` file with:
 
 ```env
-DATABASE_URL="postgresql://user:password@localhost:5432/rugbybuddies?schema=public"
+DATABASE_URL="postgresql://user:password@localhost:5432/rugbybuddy?schema=public"
 NEXTAUTH_SECRET="your-secret-key-here"
 NEXTAUTH_URL="http://localhost:3000"
 

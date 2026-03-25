@@ -5,8 +5,8 @@ import { ContactForm } from "@/components/contact-form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: "Contact | Rugby Buddies",
-  description: "Get in touch with Rugby Buddies.",
+  title: "Contact | Rugby Buddy",
+  description: "Get in touch with Rugby Buddy.",
 };
 
 export default async function ContactPage() {

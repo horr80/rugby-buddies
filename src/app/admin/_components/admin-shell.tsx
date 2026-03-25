@@ -70,7 +70,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
       <div className="flex h-16 items-center gap-2 border-b border-emerald-900/60 px-4">
         <span className="text-xl font-bold tracking-tight text-amber-400">🏉</span>
         <div>
-          <p className="text-sm font-semibold text-white">Rugby Buddies</p>
+          <p className="text-sm font-semibold text-white">Rugby Buddy</p>
           <p className="text-xs text-emerald-200/70">Admin</p>
         </div>
         <Button

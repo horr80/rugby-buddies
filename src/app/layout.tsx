@@ -17,9 +17,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Rugby Buddies - Kids Rugby Training",
-  description: "Fun and professional kids rugby training sessions. Book your child into rugby blocks, view schedules, and stay connected with Rugby Buddies.",
-  keywords: "rugby, kids rugby, rugby training, rugby buddies, youth rugby, UK rugby",
+  title: "Rugby Buddy - Kids Rugby Training",
+  description: "Fun and professional kids rugby training sessions. Book your child into rugby blocks, view schedules, and stay connected with Rugby Buddy.",
+  keywords: "rugby, kids rugby, rugby training, rugby buddy, youth rugby, UK rugby",
 };
 
 export default function RootLayout({
