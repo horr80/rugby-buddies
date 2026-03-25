@@ -5,6 +5,7 @@ import { useSession, signOut } from "next-auth/react";
 import { useState } from "react";
 import { Menu, X, User, LogOut, LayoutDashboard, Shield } from "lucide-react";
 import { Button } from "./ui/button";
+import { RugbyBall } from "./rugby-ball";
 
 export function Navbar() {
   const { data: session } = useSession();
@@ -18,9 +19,7 @@ export function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center font-bold text-lg text-white">
-                RB
-              </div>
+              <RugbyBall className="w-10 h-10" />
               <span className="text-xl font-bold hidden sm:block">Rugby Buddy</span>
             </Link>
           </div>

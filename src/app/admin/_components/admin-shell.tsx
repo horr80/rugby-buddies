@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { RugbyBall } from "@/components/rugby-ball";
 
 type NavItem = { href: string; label: string; icon: LucideIcon; end?: boolean };
 
@@ -66,7 +67,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
       )}
     >
       <div className="flex h-16 items-center gap-2 border-b border-emerald-900/60 px-4">
-        <span className="text-xl font-bold tracking-tight text-amber-400">🏉</span>
+        <RugbyBall className="w-8 h-8 shrink-0" />
         <div>
           <p className="text-sm font-semibold text-white">Rugby Buddy</p>
           <p className="text-xs text-emerald-200/70">Admin</p>

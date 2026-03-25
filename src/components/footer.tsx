@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RugbyBall } from "./rugby-ball";
 
 export function Footer() {
   return (
@@ -7,9 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center font-bold text-lg">
-                RB
-              </div>
+              <RugbyBall className="w-10 h-10" />
               <span className="text-xl font-bold">Rugby Buddy</span>
             </div>
             <p className="text-green-300 text-sm">
