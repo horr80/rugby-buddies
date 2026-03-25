@@ -107,6 +107,14 @@ export function MediaGallery({ items }: MediaGalleryProps) {
   const [open, setOpen] = useState(false);
 
   const openItem = (item: MediaItemDTO) => {
+    if (item.type === "VIDEO" && !getVideoEmbedSrc(item.url)) {
+      window.open(item.url, "_blank", "noopener,noreferrer");
+      return;
+    }
+    if (item.type === "PHOTO" && !item.url.match(/\.(jpe?g|png|gif|webp|svg|bmp)(\?|$)/i)) {
+      window.open(item.url, "_blank", "noopener,noreferrer");
+      return;
+    }
     setActive(item);
     setOpen(true);
   };
